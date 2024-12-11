@@ -1,0 +1,221 @@
+:root {
+  /* Light Mode Variables */
+  --bg-color-light: #f5f5f5;
+  --text-color-light: #333;
+  --note-bg-light: #ffffff;
+  --btn-bg-light: #007bff;
+  --btn-color-light: #ffffff;
+
+  /* Dark Mode Variables */
+  --bg-color-dark: #121212;
+  --text-color-dark: #ffffff;
+  --note-bg-dark: #1e1e1e;
+  --btn-bg-dark: #4caf50;
+  --btn-color-dark: #ffffff;
+
+  --note-border-radius: 10px;
+  --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+  /* Font Scaling */
+  --font-small: 1rem;
+  --font-medium: 1.2rem;
+  --font-large: 1.5rem;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-color-light);
+  color: var(--text-color-light);
+  transition: all 0.3s ease;
+  background-image: url('https://images.pexels.com/photos/346529/pexels-photo-346529.jpeg');
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  background-repeat: no-repeat;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+  width: 90%; /* Adapt for smaller screens */
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-image: url('https://img.freepik.com/free-vector/abstract-blue-circle-black-background-technology_1142-10027.jpg');
+  background-size: cover;
+  background-position: center;
+  padding: 15px;
+  border-radius: var(--note-border-radius);
+  color: hsl(230, 23%, 95%);
+  font-weight: bold;
+  text-align: center;
+}
+
+h1 {
+  font-size: var(--font-large);
+}
+
+.btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: var(--btn-bg-light);
+  color: var(--btn-color-light);
+  cursor: pointer;
+  font-weight: bold;
+  font-size: var(--font-medium);
+  transition: background-color 0.3s ease;
+}
+
+.add-note-btn {
+  margin: 20px 0;
+  background-color: #eee4e4;
+  font-weight: bold;
+  border-radius: 12px;
+  font-size: var(--font-medium);
+  padding: 6px;
+}
+
+.notes-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 10px;
+}
+
+.note {
+  background-color: var(--note-bg-light);
+  padding: 15px;
+  border-radius: var(--note-border-radius);
+  box-shadow: var(--box-shadow);
+  position: relative;
+  color: var(--text-color-light);
+  background-image: url('https://img.freepik.com/premium-photo/white-roses-white-background_276152-1190.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+textarea {
+  width: 100%;
+  height: 80px;
+  border: none;
+  background: transparent;
+  resize: none;
+  outline: none;
+  color: black;
+  font-size: var(--font-small);
+}
+
+.delete-btn,
+.edit-btn {
+  position: absolute;
+  top: 10px;
+  border: none;
+  border-radius: 5px;
+  padding: 5px;
+  cursor: pointer;
+  color: white;
+  font-size: var(--font-small);
+}
+
+.delete-btn {
+  background-color: rgb(247, 5, 5);
+  right: 10px;
+}
+
+.edit-btn {
+  background-color: blue;
+  right: 50px;
+}
+
+body.dark {
+  background-color: var(--bg-color-dark);
+  color: var(--text-color-dark);
+}
+
+body.dark .note {
+  background-color: var(--note-bg-dark);
+}
+
+body.dark .btn {
+  background-color: var(--btn-bg-dark);
+}
+
+body.dark .cancel-btn {
+  background-color: red;
+}
+
+.hidden {
+  display: none;
+}
+
+.note-form {
+  margin: 20px 0;
+  padding: 15px;
+  background-color: var(--note-bg-light);
+  border-radius: var(--note-border-radius);
+  box-shadow: var(--box-shadow);
+  background-image: url('https://img.freepik.com/premium-photo/white-roses-white-background_276152-1190.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+textarea:focus {
+  outline: 2px solid var(--btn-bg-light);
+}
+
+.cancel-btn {
+  background-color: red;
+  color: white;
+}
+
+/* Media Queries for Smaller Screens */
+@media (max-width: 768px) {
+  h1 {
+    font-size: var(--font-medium);
+  }
+
+  .btn {
+    font-size: var(--font-small);
+    padding: 8px 15px;
+  }
+
+  .add-note-btn {
+    font-size: var(--font-small);
+  }
+
+  .notes-container {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+
+  .note {
+    padding: 10px;
+  }
+
+  textarea {
+    font-size: var(--font-small);
+    height: 60px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .btn {
+    font-size: 0.9rem;
+    padding: 8px;
+  }
+
+  .add-note-btn {
+    font-size: 0.9rem;
+  }
+}
